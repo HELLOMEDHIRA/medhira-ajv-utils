@@ -30,10 +30,10 @@ In modern applications, data validation is critical. **MEDHIRA AJV Utils** provi
 ## Key Features
 
 - :material-check-circle: **Custom Formats** - UUID, India-PAN, IFSC, PIN code, Udyam
-- :material-key: **Custom Keywords** - decimalPrecision validation
-- :material-file-document: **ISO 8601** - Date, time, duration formats
-- :material-language-typescript: **Full TypeScript Support**
-- :material India: **India-Specific** - Indian business identifiers
+- :material-vpn-key: **Custom Keywords** - decimalPrecision validation
+- :material-description: **ISO 8601** - Date, time, duration formats
+- :material-code: **Full TypeScript Support**
+- :material-location-city: **India-Specific** - Indian business identifiers
 
 ## Quick Example
 

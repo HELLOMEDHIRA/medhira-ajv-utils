@@ -34,8 +34,7 @@ theme:
     - content.code.copy
 
 plugins:
-  - search:
-      lang: en
+  - search
 
 markdown_extensions:
   - admonition
