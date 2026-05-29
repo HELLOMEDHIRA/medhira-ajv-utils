@@ -6,7 +6,7 @@ site_author: MEDHIRA Team
 repo_url: https://github.com/HELLOMEDHIRA/medhira-ajv-utils
 repo_name: HELLOMEDHIRA/medhira-ajv-utils
 
-copyright: "Copyright &copy; 2024 MEDHIRA - Engineering Intelligence Across Everything"
+copyright: "Copyright &copy; 2024–2026 MEDHIRA - Engineering Intelligence Across Everything"
 
 theme:
   name: material
@@ -74,5 +74,5 @@ extra:
       link: https://linkedin.com/in/smuniharish
     - icon: fontawesome/brands/npm
       link: https://www.npmjs.com/package/medhira-ajv-utils
-  version: 0.0.1
-  release: 0.0.1
+  version: 0.1.0
+  release: 0.1.0

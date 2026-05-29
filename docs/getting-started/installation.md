@@ -11,7 +11,7 @@ This guide will help you install MEDHIRA AJV Utils.
 
 ```bash
 # NPM
-npm install --save medhira-ajv-utils ajv ajv-formats ajv-errors
+npm install medhira-ajv-utils ajv ajv-formats ajv-errors
 
 # Yarn
 yarn add medhira-ajv-utils ajv ajv-formats ajv-errors
@@ -19,26 +19,26 @@ yarn add medhira-ajv-utils ajv ajv-formats ajv-errors
 
 ## Peer Dependencies
 
-This package requires the following peer dependencies:
-
 | Package | Version | Description |
 |---------|---------|-------------|
-| `ajv` | ^8.17.1 | Core validation library |
-| `ajv-formats` | ^3.0.1 | JSON Schema formats |
+| `ajv` | ^8.20.0 | Core validation library |
+| `ajv-formats` | ^3.0.1 | Standard JSON Schema formats |
 | `ajv-errors` | ^3.0.0 | Custom error messages |
 
-## Verify Installation
+This package has **no runtime dependencies**.
 
-To verify the installation was successful:
+## Verify Installation
 
 ```js
 import { ajvCustomFormatsRegistry, ajvCustomKeywordsRegistry } from 'medhira-ajv-utils';
 
 console.log('MEDHIRA AJV Utils installed successfully');
+console.log(typeof ajvCustomFormatsRegistry); // 'function'
+console.log(typeof ajvCustomKeywordsRegistry); // 'function'
 ```
 
 ## Next Steps
 
-- [Quick Start](quick-start.md) - Get up and running
-- [Formats](../formats/all-formats.md) - Available validation formats
-- [Keywords](../keywords/decimalprecision.md) - Custom keywords
+- [Quick Start](quick-start.md) — Get up and running
+- [Formats](../formats/all-formats.md) — Available validation formats
+- [Keywords](../keywords/decimalprecision.md) — Custom keywords

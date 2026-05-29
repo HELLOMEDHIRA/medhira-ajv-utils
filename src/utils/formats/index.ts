@@ -27,7 +27,7 @@ const ajvCustomFormats: FormatI[] = [
     format: UTCTimeFormat,
   },
   {
-    name: 'iso8601-date-time',
+    name: 'iso8601-duration',
     format: iso8601DurationFormat,
   },
   {

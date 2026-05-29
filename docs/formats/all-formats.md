@@ -1,6 +1,6 @@
 # All Formats
 
-MEDHIRA AJV Utils provides various validation formats.
+MEDHIRA AJV Utils provides the following validation formats.
 
 ## Available Formats
 
@@ -8,16 +8,17 @@ MEDHIRA AJV Utils provides various validation formats.
 |--------|-------------|
 | `uuid` | UUID validation |
 | `india-PAN` | Indian PAN number |
+| `india-Personal-PAN` | Indian personal PAN (4th character `P`) |
 | `india-IFSC` | Indian IFSC code |
 | `india-pincode` | Indian PIN code |
 | `udyam` | Udyam registration ID |
-| `positive-number-in-string` | Positive number as string |
+| `positive-number-in-string` | Non-negative number as string |
 | `utc-date-time` | UTC date and time |
 | `iso8601-duration` | ISO 8601 duration |
 
 ## uuid
 
-Validates UUID (Universally Unique Identifier).
+Validates UUID (Universally Unique Identifier). Supports UUID versions 1, 3, 4, and 5.
 
 ```json
 {
@@ -28,13 +29,13 @@ Validates UUID (Universally Unique Identifier).
 }
 ```
 
-**Valid**: `e3ced088-62a2-418b-bda1-d114a37badb3`
+**Valid:** `e3ced088-62a2-418b-bda1-d114a37badb3`
 
-**Invalid**: `e3ced088-62a2-418b-bda1-d114a`
+**Invalid:** `e3ced088-62a2-418b-bda1-d114a`
 
 ## positive-number-in-string
 
-Validates positive numbers represented as strings.
+Validates non-negative numbers represented as strings.
 
 ```json
 {
@@ -45,13 +46,13 @@ Validates positive numbers represented as strings.
 }
 ```
 
-**Valid**: `'123'`, `'0'`, `'999.99'`
+**Valid:** `'123'`, `'0'`, `'999.99'`
 
-**Invalid**: `'-123'`, `'abc'`
+**Invalid:** `'-123'`, `'abc'`
 
 ## utc-date-time
 
-Validates UTC date and time format.
+Validates UTC date and time in ISO 8601 format. Milliseconds are optional.
 
 ```json
 {
@@ -62,9 +63,9 @@ Validates UTC date and time format.
 }
 ```
 
-**Valid**: `'2024-09-21T14:30:00Z'`
+**Valid:** `'2024-09-21T14:30:00Z'`, `'2024-09-21T14:30:00.000Z'`
 
-**Invalid**: `'12/09/2023'`
+**Invalid:** `'12/09/2023'`, `'2024-09-21'`
 
 ## iso8601-duration
 
@@ -79,9 +80,9 @@ Validates ISO 8601 duration format.
 }
 ```
 
-**Valid**: `'PT13D'`, `'PT12H'`
+**Valid:** `'P13D'`, `'PT12H'`, `'PT1H30M'`
 
-**Invalid**: `'12 hours'`
+**Invalid:** `'12 hours'`, `'1d'`
 
 ## Next Section
 

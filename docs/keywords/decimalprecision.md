@@ -1,10 +1,10 @@
 # decimalPrecision
 
-The `decimalPrecision` keyword enforces strict control over decimal places.
+The `decimalPrecision` keyword enforces a maximum number of decimal places.
 
 ## Usage
 
-Works with both `number` and `string` types.
+Works with both `number` and numeric `string` types.
 
 ### For Number Type
 
@@ -17,9 +17,9 @@ Works with both `number` and `string` types.
 }
 ```
 
-**Valid**: `2`, `2.11`
+**Valid:** `2`, `2.11`
 
-**Invalid**: `2.123`
+**Invalid:** `2.123`
 
 ### For String Type
 
@@ -32,9 +32,9 @@ Works with both `number` and `string` types.
 }
 ```
 
-**Valid**: `'2'`, `'2.11'`
+**Valid:** `'2'`, `'2.11'`
 
-**Invalid**: `'2.123'`, `'2.123a'`
+**Invalid:** `'2.123'`, `'2.123a'`
 
 ## Examples
 
@@ -47,9 +47,10 @@ Works with both `number` and `string` types.
     "decimalPrecision": 2
   }
 }
-{
-  "price": 19.99
-}
+```
+
+```json
+{ "price": 19.99 }
 ```
 
 ### Percentage
@@ -61,9 +62,10 @@ Works with both `number` and `string` types.
     "decimalPrecision": 2
   }
 }
-{
-  "rate": 5.50
-}
+```
+
+```json
+{ "rate": 5.50 }
 ```
 
 ### String Currency
@@ -75,9 +77,10 @@ Works with both `number` and `string` types.
     "decimalPrecision": 3
   }
 }
-{
-  "amount": "150.123"
-}
+```
+
+```json
+{ "amount": "150.123" }
 ```
 
 ## Error Messages

@@ -12,28 +12,32 @@ title: MEDHIRA AJV Utils
 
 ---
 
-MEDHIRA AJV Utils is an advanced utility package designed to extend AJV (Another JSON Schema Validator) with custom formats and keywords, allowing developers to create more precise and tailored JSON schema validations.
+MEDHIRA AJV Utils extends [AJV](https://ajv.js.org/) (Another JSON Schema Validator) with custom formats and keywords for precise, declarative validation.
 
-!!! note
-    This package requires **ajv**, **ajv-formats**, and **ajv-errors** as peer dependencies.
+!!! note "Peer dependencies"
+    Install **ajv**, **ajv-formats**, and **ajv-errors** alongside this package.
 
 ## Why MEDHIRA?
 
-In modern applications, data validation is critical. **MEDHIRA AJV Utils** provides:
+| Feature | Description |
+|---------|-------------|
+| **Ready-to-use formats** | UUID, UTC timestamps, ISO durations, India business IDs |
+| **Custom keywords** | `decimalPrecision` for currency and numeric strings |
+| **TypeScript support** | Type definitions included |
+| **Zero runtime dependencies** | Pure validation logic — only AJV peer deps required |
 
-- **Ready-to-use Formats** - Pre-built validation for common patterns
-- **Custom Keywords** - Extend AJV with your own validation logic
-- **India-Specific Formats** - PAN, IFSC, PIN code, Udyam validation
-- **TypeScript Support** - Full type definitions included
-- **Zero Dependencies** - Lightweight and fast
+## Architecture
 
-## Key Features
-
-- :material-check-circle: **Custom Formats** - UUID, India-PAN, IFSC, PIN code, Udyam
-- :material-puzzle: **Custom Keywords** - decimalPrecision validation
-- :material-calendar: **ISO 8601** - Date, time, duration formats
-- :material-file-code: **Full TypeScript Support**
-- :material-map-marker: **India-Specific** - Indian business identifiers
+```mermaid
+flowchart TB
+    Dev["Developer"] --> Ajv["Ajv Instance"]
+    Dev --> MAU["medhira-ajv-utils"]
+    MAU --> Fmt["ajvCustomFormatsRegistry"]
+    MAU --> Kw["ajvCustomKeywordsRegistry"]
+    Fmt --> Ajv
+    Kw --> Ajv
+    Ajv --> Validate["compile(schema) → validate(data)"]
+```
 
 ## Quick Example
 
@@ -41,12 +45,11 @@ In modern applications, data validation is critical. **MEDHIRA AJV Utils** provi
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';
 import ajvFormats from 'ajv-formats';
-
 import { ajvCustomFormatsRegistry, ajvCustomKeywordsRegistry } from 'medhira-ajv-utils';
 
+const ajv = new Ajv({ allErrors: true });
 ajvErrors(ajv);
 ajvFormats(ajv);
-
 ajvCustomFormatsRegistry(ajv);
 ajvCustomKeywordsRegistry(ajv);
 
@@ -55,8 +58,8 @@ const schema = {
   properties: {
     id: { type: 'string', format: 'uuid' },
     pan: { type: 'string', format: 'india-PAN' },
-    price: { type: 'number', decimalPrecision: 2 }
-  }
+    price: { type: 'number', decimalPrecision: 2 },
+  },
 };
 
 const validate = ajv.compile(schema);
@@ -66,8 +69,8 @@ const validate = ajv.compile(schema);
 
 To keep this library maintained and up-to-date, please consider sponsoring it on GitHub.
 
-Or, if you're looking for private support or help in customizing the experience, reach out to us at **hello.medhira@gmail.com**
+For private support, reach out at **hello.medhira@gmail.com**
 
 ---
 
-**MEDHIRA** - Engineering Intelligence Across Everything
+**MEDHIRA** — Engineering Intelligence Across Everything

@@ -4,7 +4,7 @@ MEDHIRA AJV Utils is licensed under the Apache 2.0 License.
 
 ## Apache 2.0 License
 
-Copyright (c) 2024 MEDHIRA
+Copyright (c) 2024–2026 MEDHIRA
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -22,15 +22,19 @@ limitations under the License.
 
 ## Third-Party Libraries
 
-This package includes dependencies that are licensed under their own terms:
+This package uses the following peer dependencies (install alongside this package):
 
-- ajv - MIT License
-- ajv-formats - MIT License
-- ajv-errors - MIT License
+| Package | License | Role |
+|---------|---------|------|
+| `ajv` | MIT | JSON Schema validation |
+| `ajv-formats` | MIT | Standard formats |
+| `ajv-errors` | MIT | Custom error messages |
+
+There are no bundled runtime dependencies.
 
 ## MEDHIRA
 
-**MEDHIRA** - Engineering Intelligence Across Everything
+**MEDHIRA** — Engineering Intelligence Across Everything
 
 - Website: [https://medhira.readthedocs.io/en/latest/](https://medhira.readthedocs.io/en/latest/)
 - GitHub: [https://github.com/HELLOMEDHIRA](https://github.com/HELLOMEDHIRA)
